@@ -6,7 +6,13 @@ namespace Exercise1Calculator
     {
         static void Main(string[] args)
         {
-            Calculator p = new Calculator();
+
+            bool finished = false;
+
+            do
+            {
+                Calculator p = new Calculator();
+
 
             Console.WriteLine("Welcome to the Calculator");
 
@@ -18,6 +24,21 @@ namespace Exercise1Calculator
             Console.WriteLine("\nWrite one number of your option \n\n1 - Sum \n2 - Subtract \n3 - Multiply \n4 - Division \n");
             p.Option = Convert.ToInt32(Console.ReadLine());
             p.cal();
+
+                
+                Console.Write("restart (y/n)");
+            char c = char.Parse(Console.ReadLine());
+                
+                Console.Clear();
+                if (c == 'y')
+            {
+                finished = false;
+            }
+            else
+            {
+                finished = true;
+            }
+        } while (!finished);
 
         }
 
